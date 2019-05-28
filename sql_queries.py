@@ -63,13 +63,13 @@ songplay_table_create = "CREATE TABLE IF NOT EXISTS songplays   				\
                         	songplay_id BIGINT identity(0, 1),                  \
                             start_time  TIMESTAMP NOT NULL,             		\
                             user_id     VARCHAR NOT NULL,						\
-                            level       VARCHAR,                				\
-                            song_id     VARCHAR,                				\
-                            artist_id   VARCHAR,                				\
+                            level       VARCHAR NOT NULL,                		\
+                            song_id     VARCHAR NOT NULL,                		\
+                            artist_id   VARCHAR NOT NULL,              			\
                             session_id  VARCHAR,                				\
                             location    VARCHAR,                				\
                             user_agent  VARCHAR,                				\
-                            PRIMARY KEY (songplay_id, user_id)  				\
+                            PRIMARY KEY (songplay_id) 			 				\
                         );"
 
 user_table_create = "CREATE TABLE IF NOT EXISTS users 					   		\
